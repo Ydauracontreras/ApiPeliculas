@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="static/css/style.css"
+	th:href="@{/css/style.css}">
+
+<title>Buscar Película</title>
+</head>
+<body class="down_btn">
+
+	<div >
+		<a href="/" th:href="@{/}">Home</a>
+	</div>
+	
+	<h1>Bienvenido al módulo Buscar Pelicula</h1>
+	<div class="form text_field ">
+		<form action="home" th:action="@{/find}" th:object="${movie}" method="post">
+		<label>Título:</label> <input type="text" name="titulo"><br>
+		<input type="submit" value="Buscar" class="btn">
+	</form>
+	<span th:if="${noEncontrada}">La película no se encontró</span>
+	</div>
+</body>
+</html>
